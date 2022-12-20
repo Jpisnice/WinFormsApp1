@@ -10,7 +10,7 @@ namespace WinFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             //open Home.cs when button is clicked
-            Home home = new Home();
+            Form2 home = new Form2();
             home.Show();
             this.Hide();
             
@@ -20,6 +20,11 @@ namespace WinFormsApp1
         {
             
 
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
 
         }
     }

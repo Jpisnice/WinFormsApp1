@@ -10,16 +10,21 @@ using System.Windows.Forms;
 
 namespace WinFormsApp1
 {
-    public partial class Home : Form
+    public partial class IncomeHandler : Form
     {
-        public Home()
+        public IncomeHandler()
         {
             InitializeComponent();
         }
 
-        private void textBox3_TextChanged(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e)
         {
+            //on click should close this form and open Form2.cs
 
+            Form2 f2 = new Form2();
+            f2.Show();
+            this.Hide();
+            
         }
     }
 }
