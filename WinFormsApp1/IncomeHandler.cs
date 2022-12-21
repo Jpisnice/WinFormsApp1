@@ -31,7 +31,7 @@ namespace WinFormsApp1
         private void button1_Click(object sender, EventArgs e)
         {
             //on clcik enters all entries to inc_table in database using Microsoft SQL Server Management Studio
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\Visual Studio 2017\Projects\WinFormsApp1\WinFormsApp1\Expenses.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=LAPTOP-E3E3BLB3\\SQLEXPRESS;Initial Catalog=JP-SE;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("INSERT INTO inc_table (inc_name, inc_amount, inc_date) VALUES (@inc_name, @inc_amount, @inc_date)", con);
             cmd.Parameters.AddWithValue("@inc_name", textBox1.Text);
@@ -46,7 +46,7 @@ namespace WinFormsApp1
         private void button2_Click(object sender, EventArgs e)
         {
             //on click should modify corresponding entries in inc_table
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\Visual Studio 2017\Projects\WinFormsApp1\WinFormsApp1\Expenses.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=LAPTOP-E3E3BLB3\\SQLEXPRESS;Initial Catalog=JP-SE;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("UPDATE inc_table SET inc_name = @inc_name, inc_amount = @inc_amount, inc_date = @inc_date WHERE inc_name = @inc_name", con);
             cmd.Parameters.AddWithValue("@inc_name", textBox1.Text);
@@ -60,7 +60,7 @@ namespace WinFormsApp1
         private void button3_Click(object sender, EventArgs e)
         {
             //on click should delete corresponding entries in inc_table
-            SqlConnection con = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\user\Documents\Visual Studio 2017\Projects\WinFormsApp1\WinFormsApp1\Expenses.mdf;Integrated Security=True");
+            SqlConnection con = new SqlConnection("Data Source=LAPTOP-E3E3BLB3\\SQLEXPRESS;Initial Catalog=JP-SE;Integrated Security=True");
             con.Open();
             SqlCommand cmd = new SqlCommand("DELETE FROM inc_table WHERE inc_name = @inc_name", con);
             cmd.Parameters.AddWithValue("@inc_name", textBox1.Text);
