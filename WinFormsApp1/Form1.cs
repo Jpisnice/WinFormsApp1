@@ -9,11 +9,22 @@ namespace WinFormsApp1
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //open Home.cs when button is clicked
-            Form2 home = new Form2();
-            home.Show();
-            this.Hide();
-            
+            //verify detals and give warning if empty else open HomePage.cs
+            if (textBox1.Text == "" || textBox2.Text == "")
+            {
+                MessageBox.Show("Please enter your username and password");
+            }
+            if (textBox1.Text == "admin" && textBox2.Text == "admin")
+            {
+                HomePage hp = new HomePage();
+                hp.Show();
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Invalid username or password");
+            }
+
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
